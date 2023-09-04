@@ -1,7 +1,3 @@
-# test_B34_E22CSEU1012
-
-## A line added to VS Code
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -57,25 +53,25 @@ public class EmployeeSort {
         System.out.println("1. Sort by Age");
         System.out.println("2. Sort by Name");
         System.out.println("3. Sort by Salary");
-        System.out.print("Enter your choice: ");
+        System.out.print("Enter your choice (1/2/3): ");
         int choice = scanner.nextInt();
 
         switch (choice) {
             case 1:
-                Collections.sort(employees, Comparator.comparing(Employee::getAge));
+                employees.sort(Comparator.comparingInt(Employee::getAge));
                 break;
             case 2:
-                Collections.sort(employees, Comparator.comparing(Employee::getName));
+                employees.sort(Comparator.comparing(Employee::getName));
                 break;
             case 3:
-                Collections.sort(employees, Comparator.comparing(Employee::getSalary));
+                employees.sort(Comparator.comparingInt(Employee::getSalary));
                 break;
             default:
                 System.out.println("Invalid choice");
                 return;
         }
 
-        System.out.println("Sorted Employee Table:");
+        System.out.println("\nSorted Employee Table:");
         for (Employee employee : employees) {
             System.out.println(employee);
         }
